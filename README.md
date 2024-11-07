@@ -17,7 +17,13 @@ App.js, Dice.js, assets/ 이미지 파일
 <App />컴포넌트를 사용할 수 있도록 변경
 ### App.js
 기본 컴포넌트.
-### Dict.js
+### Dice.js
 주사위 이미지를 보여주는 컴포넌트
 ```import diceBlue01 from './assets/dict-blue-1.svg```
 
+## 24.11.07 프로젝트 셋팅
+### App.js
+React의 useState 을 추가
+* random 으로 주사위의 숫자를 변경
+* 나온 숫자들의 총점 구하기
+* 나온 숫자 기록: ```[...gameHistory, nextNum]```로 새로운 참조형 값을 만듦.
