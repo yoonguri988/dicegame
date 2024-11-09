@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Button from "./Button";
 import Board from "./Board";
+import logo from "./assets/logo.png";
 import "./App.css";
 
 function random(n) {
@@ -23,18 +24,32 @@ function App() {
   };
 
   return (
-    <div>
+    <div id="root">
       <div className="App">
-        <Button className="App-button" color="blue" onClick={handleRollClick}>
-          던지기
-        </Button>
-        <Button className="App-button" color="red" onClick={handleClearClick}>
-          처음부터
-        </Button>
-      </div>
-      <div>
-        <Board name="나" color="blue" gameHistory={myHistory} />
-        <Board name="상대" color="red" gameHistory={otherHistory} />
+        <div>
+          <img class="App-logo" src={logo} alt="주사위게임 로고" />
+          <h1 class="App-title">주사위게임</h1>
+          <Button className="App-button" color="blue" onClick={handleRollClick}>
+            던지기
+          </Button>
+          <Button className="App-button" color="red" onClick={handleClearClick}>
+            처음부터
+          </Button>
+        </div>
+        <div className="App-boards">
+          <Board
+            className="App-board"
+            name="나"
+            color="blue"
+            gameHistory={myHistory}
+          />
+          <Board
+            className="App-board"
+            name="상대"
+            color="red"
+            gameHistory={otherHistory}
+          />
+        </div>
       </div>
     </div>
   );
